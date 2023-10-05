@@ -1,0 +1,264 @@
+[
+  {
+    "name": "collection-items",
+    "key": "id",
+    "data": [
+      {
+        "id": "nfty",
+        "items": [
+          "0x834a6b1fd98484e1ac450df0dd4275d6d2b941814c4b5202b765a1e3fe8e58b3",
+          "0xcce872fb6188255bc78640130f78625debc5b594f325dba3ca27bc45a79e0f33",
+          "0x98a98c3ab7f7f5989805011622c4f22edc47d8c3d5bb36db10c823da14d9b413",
+          "0x35543f8beea0cd1412343c94251f5df620eb44b5773070b79b69d17802329816",
+          "0xf7a3cc9a332423b5895dfa4d7ce68293604954b4cc73f748a91b6542bdccccc4",
+          "0x730e1278ccaa25804624bdcdd0464ee78befcdf75908bb202bd77677868e651b",
+          "0x77f3e47c1a2f92bfca6a1c351a22aceda60f700834191e16ee3be110579aff4c"
+        ],
+        "created_at": 1680672065398,
+        "updated_at": 1680672065398
+      }
+    ]
+  },
+  {
+    "name": "collections",
+    "key": "id",
+    "data": [
+      {
+        "created_at": null,
+        "id": "nfty",
+        "isWallet": true,
+        "itemCount": 7,
+        "name": "NFTY DEMO WALLET",
+        "note": "Nfty-Trckr demo wallet. <br> (Nfty-Trckr is not responsible for NFTs sent to this address)",
+        "updated_at": null,
+        "wallet": {
+          "accountId": 161794,
+          "address": "0xc9441e2bc85bE9fD27E34c7C1424aBa40c83A8fA"
+        }
+      }
+    ]
+  },
+  {
+    "name": "nfts",
+    "key": "nftId",
+    "data": [
+      {
+        "created_at_human": "6/17/22 10:34",
+        "metadata": {
+          "description": "It's a SuperStonk inspired pixel racing game. Controls: Movement = Arrows/WSAD",
+          "image": "https://www.gstop-content.com/ipfs/QmTGDYwK9tfbbEZFSaG8tLGNZHhvzb8mRHbuZEFxD3o3Lk",
+          "animation_url": "ipfs://QmUW2tdD6nynNXG1L5yCPLfkGKd8uTB8jQ42kVpSTPfCxv/?filename=src",
+          "name": "Roaring Racer v1.01",
+          "artist": "Nathan Ello",
+          "royalty_percentage": 10,
+          "animation": "https://www.gstop-content.com/ipfs/QmUW2tdD6nynNXG1L5yCPLfkGKd8uTB8jQ42kVpSTPfCxv/?filename=src"
+        },
+        "creatorFeeBips": 10,
+        "minter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "nftBaseUri": "",
+        "nftData": "0x0d505d79db1f9020a2c6465987d35c85e581ad2017d5ab5baa3584b20ee90c0f",
+        "nftFactory": "0xc852aC7aAe4b0f0a0Deb9e8A391ebA2047d80026",
+        "nftId": "0x834a6b1fd98484e1ac450df0dd4275d6d2b941814c4b5202b765a1e3fe8e58b3",
+        "nftType": "ERC1155",
+        "originalMinter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "originalRoyaltyPercentage": 10,
+        "nftOwner": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "royaltyAddress": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "royaltyPercentage": 10,
+        "status": true,
+        "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+        "created_at": 1680672060092,
+        "updated_at": 1680672060092
+      },
+      {
+        "created_at_human": "6/9/22 14:59",
+        "metadata": {
+          "description": "It's a Galaga style shooter where you can't get hit. Controls: Left/Right = Arrows, Shoot = Space Bar",
+          "image": "https://www.gstop-content.com/ipfs/QmY7tP2KtgmSSV3J7xva2GCUwF97pvkdGMH2ta7bqZU8qj",
+          "animation_url": "ipfs://Qmar68Zk5hgGZTvgaTRE4XXnfLNUGxDM27k1jc7vNmj2tY/?filename=src",
+          "name": "Last Life v1.0",
+          "artist": "Nathan Ello",
+          "royalty_percentage": 10,
+          "animation": "https://www.gstop-content.com/ipfs/Qmar68Zk5hgGZTvgaTRE4XXnfLNUGxDM27k1jc7vNmj2tY/?filename=src"
+        },
+        "creatorFeeBips": 10,
+        "minter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "nftBaseUri": "",
+        "nftData": "0x0bb311e0df0c455178e817edfaa3c58bd6d09d244c276690a895d369eae1d6d5",
+        "nftFactory": "0xc852aC7aAe4b0f0a0Deb9e8A391ebA2047d80026",
+        "nftId": "0xcce872fb6188255bc78640130f78625debc5b594f325dba3ca27bc45a79e0f33",
+        "nftType": "ERC1155",
+        "originalMinter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "originalRoyaltyPercentage": 10,
+        "nftOwner": "0xe021F036eB12EA0e2f099d9b72A5501EDc79Cc7F",
+        "royaltyAddress": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "royaltyPercentage": 10,
+        "status": true,
+        "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+        "created_at": 1680672061024,
+        "updated_at": 1680672061024
+      },
+      {
+        "created_at_human": "6/7/22 15:24",
+        "metadata": {
+          "description": "It's the classic game of Space Invaders.",
+          "image": "https://www.gstop-content.com/ipfs/QmQocrwBHRHaAHrk98o59Fgjpwv84eKDBSFcdfbX1zTLXG",
+          "animation_url": "ipfs://QmayFVktg7FiChcJiTEMnuS4D6C2nvA4pk79WHSmGQ71Rt/?filename=src",
+          "name": "Space Invaders v1.0",
+          "artist": "Nathan Ello",
+          "royalty_percentage": 10,
+          "animation": "https://www.gstop-content.com/ipfs/QmayFVktg7FiChcJiTEMnuS4D6C2nvA4pk79WHSmGQ71Rt/?filename=src"
+        },
+        "creatorFeeBips": 10,
+        "minter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "nftBaseUri": "",
+        "nftData": "0x06a9538f3ddc599fccbb80e9131222a8c59ea3aa713cd7acf15bcd4bcb9c7a7c",
+        "nftFactory": "0xc852aC7aAe4b0f0a0Deb9e8A391ebA2047d80026",
+        "nftId": "0x98a98c3ab7f7f5989805011622c4f22edc47d8c3d5bb36db10c823da14d9b413",
+        "nftType": "ERC1155",
+        "originalMinter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "originalRoyaltyPercentage": 10,
+        "nftOwner": "0xe021F036eB12EA0e2f099d9b72A5501EDc79Cc7F",
+        "royaltyAddress": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "royaltyPercentage": 10,
+        "status": true,
+        "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+        "created_at": 1680672061793,
+        "updated_at": 1680672061793
+      },
+      {
+        "created_at_human": "6/6/22 16:44",
+        "metadata": {
+          "description": "It's a remake of the classic SkiFree game originally created by Chris Pirih.",
+          "image": "https://www.gstop-content.com/ipfs/QmVHRe35QLFU7CN3u7hhimiCpR5T3FcEnV7vcBAkvKtcRr",
+          "animation_url": "ipfs://QmXXQKSwUauUCEuZuSyrSKuoGxsyjE4YmyLbLG4in9i7hk/?filename=src",
+          "name": "SkiFree v1.0",
+          "artist": "Nathan Ello",
+          "royalty_percentage": 10,
+          "animation": "https://www.gstop-content.com/ipfs/QmXXQKSwUauUCEuZuSyrSKuoGxsyjE4YmyLbLG4in9i7hk/?filename=src"
+        },
+        "creatorFeeBips": 10,
+        "minter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "nftBaseUri": "",
+        "nftData": "0x01423662b50f9275e4e21eff818ab475ee4d70a9d209d5177f601b07d170ecf7",
+        "nftFactory": "0xc852aC7aAe4b0f0a0Deb9e8A391ebA2047d80026",
+        "nftId": "0x35543f8beea0cd1412343c94251f5df620eb44b5773070b79b69d17802329816",
+        "nftType": "ERC1155",
+        "originalMinter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "originalRoyaltyPercentage": 10,
+        "nftOwner": "0xe021F036eB12EA0e2f099d9b72A5501EDc79Cc7F",
+        "royaltyAddress": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "royaltyPercentage": 10,
+        "status": true,
+        "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+        "created_at": 1680672062598,
+        "updated_at": 1680672062598
+      },
+      {
+        "created_at_human": "6/6/22 10:13",
+        "metadata": {
+          "description": "It's the classic game of breaking bricks using a paddle.",
+          "image": "https://www.gstop-content.com/ipfs/QmcH9iPrrj7sCNdJqqZUvkX2NMy4nkhGHiw1pHZLWy8bEJ",
+          "animation_url": "ipfs://QmVPwHauR6RMf3NfXZFCqxe1t47eC2Pfm4yQenXGqjmRt7/?filename=src",
+          "name": "Brick Breaker v1.0",
+          "artist": "Nathan Ello",
+          "royalty_percentage": 10,
+          "animation": "https://www.gstop-content.com/ipfs/QmVPwHauR6RMf3NfXZFCqxe1t47eC2Pfm4yQenXGqjmRt7/?filename=src"
+        },
+        "creatorFeeBips": 10,
+        "minter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "nftBaseUri": "",
+        "nftData": "0x01b947d9cef2effcb747b27fd896c1c3058871ec05455a4d6f6444d26e4caf7d",
+        "nftFactory": "0xc852aC7aAe4b0f0a0Deb9e8A391ebA2047d80026",
+        "nftId": "0xf7a3cc9a332423b5895dfa4d7ce68293604954b4cc73f748a91b6542bdccccc4",
+        "nftType": "ERC1155",
+        "originalMinter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "originalRoyaltyPercentage": 10,
+        "nftOwner": "0xe021F036eB12EA0e2f099d9b72A5501EDc79Cc7F",
+        "royaltyAddress": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "royaltyPercentage": 10,
+        "status": true,
+        "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+        "created_at": 1680672063448,
+        "updated_at": 1680672063448
+      },
+      {
+        "created_at_human": "6/26/22 19:14",
+        "metadata": {
+          "description": "It's a 2D platformer originally developed by Mateusz Tomczyk for the JS13K game competition.",
+          "image": "https://www.gstop-content.com/ipfs/QmNP8r2rnFzxfonhE1N4vxDe1U7QufcvbAPPtuZec3q5H8",
+          "animation_url": "ipfs://Qmeg9TQp5rEpXLEjnLy6u5WuPPFuS1PbZysvJB1YAyjGPR/?filename=src",
+          "name": "Wandering Wraith",
+          "artist": "Nathan Ello",
+          "royalty_percentage": 10,
+          "animation": "https://www.gstop-content.com/ipfs/Qmeg9TQp5rEpXLEjnLy6u5WuPPFuS1PbZysvJB1YAyjGPR/?filename=src"
+        },
+        "creatorFeeBips": 10,
+        "minter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "nftBaseUri": "",
+        "nftData": "0x060cda17c013add6c97c8c483cb1d2b32d5a8c245f1758c65f4216fa360f48c6",
+        "nftFactory": "0xc852aC7aAe4b0f0a0Deb9e8A391ebA2047d80026",
+        "nftId": "0x730e1278ccaa25804624bdcdd0464ee78befcdf75908bb202bd77677868e651b",
+        "nftType": "ERC1155",
+        "originalMinter": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "originalRoyaltyPercentage": 10,
+        "nftOwner": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "royaltyAddress": "0xe021f036eb12ea0e2f099d9b72a5501edc79cc7f",
+        "royaltyPercentage": 10,
+        "status": true,
+        "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+        "created_at": 1680672064382,
+        "updated_at": 1680672064382
+      },
+      {
+        "created_at_human": "6/2/22 10:03",
+        "metadata": {
+          "image": "https://www.gstop-content.com/ipfs/QmUsz8HfqKvfDN3pX9byYftJQbgtL586Z5CChTnvsUgB4E",
+          "name": "Welcome To Layer 2",
+          "royalty_percentage": 10,
+          "description": "Gifted with 💙 by @ThisBeTom via https://github.com/tomfuertes/free-loopring-nft and Designed by @0xloopdaddy",
+          "properties": {
+            "Power To": "The Players",
+            "Love": "Everyone",
+            "And Tell": "The Truth"
+          },
+          "attributes": [
+            {
+              "trait_type": "Power To",
+              "value": "The Players"
+            },
+            {
+              "trait_type": "Love",
+              "value": "Everyone"
+            },
+            {
+              "trait_type": "And Tell",
+              "value": "The Truth"
+            }
+          ],
+          "animation": ""
+        },
+        "creatorFeeBips": 10,
+        "minter": "0xcc954a62b34c284a93ffeae837e4e1717f026126",
+        "nftBaseUri": "",
+        "nftData": "0x0d66d935c1c33dbdcf8afe4d260eb1a3cacffd86ccd10acc993709cb5061caaf",
+        "nftFactory": "0xc852aC7aAe4b0f0a0Deb9e8A391ebA2047d80026",
+        "nftId": "0x77f3e47c1a2f92bfca6a1c351a22aceda60f700834191e16ee3be110579aff4c",
+        "nftType": "ERC1155",
+        "originalMinter": "0xcc954a62b34c284a93ffeae837e4e1717f026126",
+        "originalRoyaltyPercentage": 10,
+        "nftOwner": "0xcc954a62b34c284a93ffeae837e4e1717f026126",
+        "royaltyAddress": "0xcc954a62b34c284a93ffeae837e4e1717f026126",
+        "royaltyPercentage": 10,
+        "status": true,
+        "tokenAddress": "0xe47f82c110a12166a0c714f782227c1bfbfe1c44",
+        "created_at": 1680672065398,
+        "updated_at": 1680672065398
+      }
+    ]
+  },
+  {
+    "name": "trackers",
+    "key": "id"
+  }
+]

@@ -1,130 +1,65 @@
 <script>
-import 'nes.css/css/nes.min.css'
-import mockData from '@/static/mock_comment.json'
-
 import CommentCard from '@/components/comment-card.vue'
+import WalletButton from '@/components/wallet-button.vue'
+
 export default {
-  name: 'NiftyRedditTracker',
+  name: 'NftyRedditTracker',
   components: {
     CommentCard,
+    WalletButton,
   },
-  data: () => ({
-    comments: null,
-    permalink: null,
-  }),
-  methods: {
-    async fetchApi(url) {
-      url = this.fixUrl(
-        'https://api.reddit.com/r/Superstonk/comments/viqrbm/gme_daily_directory_new_start_here_discussion/idfirjl/?utm_source=share&utm_medium=web2x&context=3'
-      )
-      console.log('fetch disabled for dev')
-      this.comments = this.parseData(mockData)
-
-      // const resp = await this.$axios.$get(url)
-    },
-    fixUrl(url) {
-      //replace www.reddit.com with api.reddit.com
-      return url
-    },
-    parseData(resp) {
-      const rootComment = resp?.[1]?.data?.children?.[0]?.data || null
-      if (!rootComment) return rootComment
-      const comments = rootComment?.replies?.data?.children || []
-      this.comments = [...comments]
-      console.log(comments)
-      return comments
-    },
-    validateUrl(url) {
-      return true
-    },
+  computed: {},
+  methods: {},
+  async mounted() {
+    console.log('welcome')
   },
 }
 </script>
 
 <template>
-  <main>
-    <header>
-      <i class="nes-icon reddit is-large"></i>
+  <section class="section flex-row align-center content-center full-width">
+    <article class="nes-container  is-dark">
+      <p class="nes-text is-primary">Welcome to NFTy-Trckr!</p>
+      <p  class="mt">A utility suite to organize, find, track and distribute NFTs.</p>
+      <p class="mt">All app data is saved to this local browser only. Use import/export settings to transfer. </p>
+      <p class="mt">Current enabled networks:
+        <ul>
+          <li>Ethereum Loopring L2</li>
+        </ul>
+      </p>
+      <p class="nes-text is-warning mt">
+       App is under active development.
+      </p>
+          <a href="https://www.github.com/repo" target="_blank" class="github-link nes-text is-warning">
+        <i class="nes-icon github"></i>
+       Get full source and contribute here.
 
-      <h1 class="title">NiFTy reddit tracker</h1>
-    </header>
-
-    <section class="section">
-      <form action="#" @submit.prevent="fetchApi(permalink)">
-        <div class="nes-field">
-          <label for="endpoint">Root endpoint</label>
-
-          <div class="flex-row">
-            <input
-              v-model="permalink"
-              type="text"
-              id="endpoint"
-              class="nes-input is-dark"
-            />
-            <button type="submit" class="nes-btn is-primary mx">START</button>
-          </div>
-        </div>
-      </form>
-    </section>
-
-    <section class="section">
-      <p v-if="comments === null">Submit for replies</p>
-
-      <p v-else-if="comments === []">No comments</p>
-
-      <div v-else>
-        <comment-card
-          v-for="(comment, idx) in comments"
-          :key="idx"
-          :comment="comment"
-          >{{ idx }}</comment-card
-        >
-      </div>
-
-      <p></p>
-    </section>
-  </main>
+      </a>
+    </article>
+      <!-- <ul>
+        <li>Send, batch send</li>
+        <li>Improved social integration.</li>
+      </ul>
+    </article> -->
+    <!-- <article class="nes-container full-width has-title is-dark">
+      <p class="tile">Status</p>
+      <p>Show configuration status, btns to handle</p>
+    </article> -->
+  </section>
 </template>
 
-<style>
-:root {
-  --base-padding: 2rem;
-  --background-color: #212529;
-  --primary-color: #fff;
-}
+<style scoped>
 
-body {
-  background-color: var(--background-color);
-  color: var(--primary-color);
-  height: 100vh;
+.nes-container {
+  max-width: 900px;
 }
-
-main {
-  padding: var(--base-padding);
+.github-link {
+  font-size: .75rem;
 }
-
-header {
-  display: flex;
-  align-items: center;
-}
-
-.flex-row {
-  display: flex;
-  align-items: center;
-}
-
-.mx {
-  margin-inline: 2rem;
-}
-
-.title {
-  margin-left: var(--base-padding);
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: var(--base-padding);
+.github-link i{
+  /* height: 10px;
+  width: 10px; */
+  margin: 0;
+   transform: unset;
 }
 </style>

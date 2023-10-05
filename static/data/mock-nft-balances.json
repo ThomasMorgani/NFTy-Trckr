@@ -1,0 +1,345 @@
+{
+  "totalNum": 113,
+  "data": [
+    {
+      "id": 641859,
+      "accountId": 52274,
+      "tokenId": 32880,
+      "nftData": "0x182f6f448b40033ab78c3bf1537f29b489ea0dac6f4cd3cc3f5326bd03c70d74",
+      "tokenAddress": "0x9a855e054c57c529272dc8fa83ab7ddb343a4f05",
+      "nftId": "0x5308c3fdc1d573c42e46cc3c7d0c2d2f02a65d7a84d9676b09ad76f9d24322de",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "NOT_DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 638596,
+      "accountId": 52274,
+      "tokenId": 32879,
+      "nftData": "0x23fe2b7e66fe9b711b47d2aeba761ecd3d3ef635fdeece993df7bcf564eb8c83",
+      "tokenAddress": "0xa3c8b6b20d1e8aa319e6b351a1b1cd76c316df89",
+      "nftId": "0xf661dc71abd8ca8a658a16f6fabe9c8a0e3f1c0a74e5c632393d3d7d54a3bc69",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "NOT_DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 621528,
+      "accountId": 52274,
+      "tokenId": 32878,
+      "nftData": "0x11434e486cdc5a2256db56dc4277dcee49d9fd1f8c10d1921fe0c66695d521ee",
+      "tokenAddress": "0x4946B07B4998a08aB530305EA17eb5546944f9A3",
+      "nftId": "0x57694591c6f92a9fec7c3e963ecf73a8a5825554325d0bba06bcf830321e643c",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "NOT_DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 609236,
+      "accountId": 52274,
+      "tokenId": 32877,
+      "nftData": "0x01acc6d7c0dda890956ba1b9552ab0bf090c15eb3573df26895b10a00bdfd194",
+      "tokenAddress": "0xf7c7b7948d86d5b975c81494b10a220b2813e015",
+      "nftId": "0x257eab8c2fc7ae82fe299bb4a7966452fb4d0d929dfeb54891d4d88672c016f7",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "NOT_DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 608712,
+      "accountId": 52274,
+      "tokenId": 32876,
+      "nftData": "0x0f421215e35b5edb996486851177d5e4620897aa83ea74d66bdf166a416572fd",
+      "tokenAddress": "0x520E98Db6Cc0b948995A33a8Ac559c70BcF5A5Ac",
+      "nftId": "0xb4e414f8c547b0595163089e13da2f08360b5541361300f420e302d6055ae29a",
+      "nftType": "ERC1155",
+      "total": "3",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 608386,
+      "accountId": 52274,
+      "tokenId": 32875,
+      "nftData": "0x254ddb9f6435d691bb5af3522bb7cf475c574a55ba1bbc1bec34aa54a174eaef",
+      "tokenAddress": "0x8c3b04e1c565a2b65a2030c5a7834b2ddc139696",
+      "nftId": "0xbe54d4784921d2c77cd47e2b90479e6f9dbb7b5e0af68d3ba6edffe523d7420a",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 599983,
+      "accountId": 52274,
+      "tokenId": 32874,
+      "nftData": "0x21ca58b0203c9e6cdd92489eb6145b7abf2d2dfc58aa9de213d35c678d4ecc9d",
+      "tokenAddress": "0xe35ec0592f8f3c5b0d687ac1836dfd552d8071de",
+      "nftId": "0xef0b9ca402b1cc87bef101bad6f27bd4a3dd72068b667ef0ed71a19b3ce5ba3d",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "NOT_DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 598215,
+      "accountId": 52274,
+      "tokenId": 32873,
+      "nftData": "0x1692c15f23f92b661f97d6d36524e2c00ff6a42f62284f9db097a2302917487d",
+      "tokenAddress": "0xB07E92e0a9Dc45711A9EF4C6cCcfcde798dE75ff",
+      "nftId": "0xf873039e0f6cc69d2b5f6778e062c8ae9fb584d554e795cca29d42177d4056ce",
+      "nftType": "ERC1155",
+      "total": "20",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 597844,
+      "accountId": 52274,
+      "tokenId": 32872,
+      "nftData": "0x0bb311e0df0c455178e817edfaa3c58bd6d09d244c276690a895d369eae1d6d5",
+      "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+      "nftId": "0xcce872fb6188255bc78640130f78625debc5b594f325dba3ca27bc45a79e0f33",
+      "nftType": "ERC1155",
+      "total": "256",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 589141,
+      "accountId": 52274,
+      "tokenId": 32871,
+      "nftData": "0x158042a83ebc9bbf77b046649cdfd376d4f9329a23d388c8697cc04ba5d0c4d1",
+      "tokenAddress": "0x33b6d6d8685b6f02eae9d08ec7f8eda010312f28",
+      "nftId": "0x456b904ea1febe9a275a532a9d6b26de13c521cde11579aed7892a74f61f8d64",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 587851,
+      "accountId": 52274,
+      "tokenId": 32870,
+      "nftData": "0x0e5583ec1e8aea33009e09e78c63e67f42684d8e5a7e258cd48ca5cdd6c03138",
+      "tokenAddress": "0x1f0878142b691ea99be5310fd73ad18f645c99bf",
+      "nftId": "0xcc44d855aac3bdcf870fadfecc2f80f2061dc255c5a3e2f3e9d702025cfaac12",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "NOT_DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 581404,
+      "accountId": 52274,
+      "tokenId": 32869,
+      "nftData": "0x24685b02bc57caf94d466a776f929378e42cf3881edb2aa1c93b687a55d2a412",
+      "tokenAddress": "0x33b6d6d8685b6f02eae9d08ec7f8eda010312f28",
+      "nftId": "0x211bad9f9306db119cafa5f7a939b83e80d3bf778740464c971710c7c1fa6fb2",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 568718,
+      "accountId": 52274,
+      "tokenId": 32868,
+      "nftData": "0x0d505d79db1f9020a2c6465987d35c85e581ad2017d5ab5baa3584b20ee90c0f",
+      "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+      "nftId": "0x834a6b1fd98484e1ac450df0dd4275d6d2b941814c4b5202b765a1e3fe8e58b3",
+      "nftType": "ERC1155",
+      "total": "93",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 565062,
+      "accountId": 52274,
+      "tokenId": 32867,
+      "nftData": "0x1a61ff64d0a62424dea622096d69c5ddfc1387f24bb7b053f3cd22953046f686",
+      "tokenAddress": "0x072e8Eb71E55270e0379af6199E6983f3fD59E1A",
+      "nftId": "0x1f8c9a727dcbc5bffadf37fd30273d4df8f57f4c99a15fe4d0d0e17121d3d194",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 565048,
+      "accountId": 52274,
+      "tokenId": 32866,
+      "nftData": "0x28e4526533a98091cd881a92e8741dcae1b0a50f9e7929f46a09deab81c8b42a",
+      "tokenAddress": "0x072e8Eb71E55270e0379af6199E6983f3fD59E1A",
+      "nftId": "0x25f191d08fd54c21fc1f67bf11a98c9269442852264be866877cb9d8a3452997",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 563674,
+      "accountId": 52274,
+      "tokenId": 32865,
+      "nftData": "0x172502e4b7623590e4c1bab4b31de82e6fcd4e99aa966fef1c13caee00b4a86d",
+      "tokenAddress": "0xe61286c57cEfd61Aa5752FB84Ae251D54baB36fC",
+      "nftId": "0x605bd09ed1c1905fd761676c93034d130de0256e0b75bff3b18dab0dd65c31c6",
+      "nftType": "ERC1155",
+      "total": "97",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 557723,
+      "accountId": 52274,
+      "tokenId": 32864,
+      "nftData": "0x0adffc1db3b9bdf8f51395f8ca1bf29046fd6cd5549dfc57c910d586b1b39651",
+      "tokenAddress": "0x74b6f35b273189ef62e6bf33e488caa8d5c411d0",
+      "nftId": "0x8d4deda7483ce663c0b820609172686bfaa431ffe3b5a33f4933b7c47b1123f5",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 557309,
+      "accountId": 52274,
+      "tokenId": 32863,
+      "nftData": "0x1bfc3d5bff5ca1b717e4dc0ade567c05f9b2ec99c5ba6bc62d5d674ce151a2be",
+      "tokenAddress": "0xfb45cd2d27e58f6407ef148e116fbe92d8e2a26b",
+      "nftId": "0xfdc8dc2d8e258da4ce6e773da2b02056c3b9576a9d6ae9119612d3e25ea452c2",
+      "nftType": "ERC1155",
+      "total": "10",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 552259,
+      "accountId": 52274,
+      "tokenId": 32862,
+      "nftData": "0x2a5227ee8053c3e8cbd03d30a55f2cd5f9de67aba201ed0b2f36ca4195abc6cd",
+      "tokenAddress": "0x87cb2b8973ea7fa30897cb4dd56797d31b0d20e6",
+      "nftId": "0x5e8f118e9cc0f89d534608c4a42ca4ff6b7aa8da44289e619f43de2cf56a6bdf",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "DEPLOYED",
+      "isCounterFactualNFT": true
+    },
+    {
+      "id": 531412,
+      "accountId": 52274,
+      "tokenId": 32861,
+      "nftData": "0x229e9b099a3686efa2dca81e5b2aac2ce0963f2f33c2477002a216442bc8629b",
+      "tokenAddress": "0x17f32af525608e9030dd7649da4f630c359e6da6",
+      "nftId": "0x0365474cfd30d43525f9a87e461c7f44eec687c73fcb68a1c53326c76fc3e3f7",
+      "nftType": "ERC1155",
+      "total": "1",
+      "locked": "0",
+      "pending": {
+        "withdraw": "0",
+        "deposit": "0"
+      },
+      "deploymentStatus": "NOT_DEPLOYED",
+      "isCounterFactualNFT": true
+    }
+  ]
+}

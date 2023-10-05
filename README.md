@@ -1,4 +1,4 @@
-# nifty-reddit-tracker
+# nfty-reddit-tracker
 
 ## Build Setup
 

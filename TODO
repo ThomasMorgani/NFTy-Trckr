@@ -1,0 +1,31 @@
+//TODO
+
+//SET GLOBAL VARS FOR DB stores, keys, etc
+
+
+////
+ move collection name above stats list in collection header
+ fix nft card, condense, font, btn tooltip spans,
+
+ nft modal viewer component
+
+
+////
+
+
+//check gs wallet api
+
+//on connect wallet
+//check if collection exist
+//else create
+//get getUserNftBalancesLoopring
+
+
+//password hash localstorage
+//if private/keys.json,
+
+//responsive layout. small screens and large need refactors
+
+
+//NFT ADD
+//concat id,minter,token store in knownbadsearches to prevent unneeded reqs

@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nifty-reddit-tracker',
+    title: 'NFTy-Trckr',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -12,7 +12,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -36,9 +36,10 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/dotenv',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -53,7 +54,27 @@ export default {
       lang: 'en',
     },
   },
+  router: {
+    middleware: ['set-view'],
+    //   extendRoutes(routes, resolve) {
+    //     routes.push({
+    //       name: 'collections',
+    //       path: '/collections/:view?/:item?',
+    //       component: resolve(__dirname, 'pages/-collections.vue'),
+    //       chunkName: 'pages/collections/_view/index',
+    //     })
+    //   },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    babel: {
+      plugins: [['@babel/plugin-proposal-class-properties', { loose: true }]],
+    },
+    loaders: {
+      vue: {
+        compiler: require('vue-template-babel-compiler'),
+      },
+    },
+  },
 }

@@ -20,7 +20,10 @@
             "clicked": false,
             "title": "$GME Daily Directory | New? Start Here! | Discussion, Megathreads, DD Library, and User Flairs",
             "link_flair_richtext": [
-              { "e": "text", "t": "\ud83d\udcc6 Daily Discussion" }
+              {
+                "e": "text",
+                "t": "\ud83d\udcc6 Daily Discussion"
+              }
             ],
             "subreddit_name_prefixed": "r/Superstonk",
             "hidden": false,
@@ -59,7 +62,9 @@
             "edited": false,
             "author_flair_css_class": null,
             "author_flair_richtext": [],
-            "gildings": { "gid_1": 4 },
+            "gildings": {
+              "gid_1": 4
+            },
             "content_categories": null,
             "is_self": true,
             "mod_note": null,
@@ -2100,7 +2105,10 @@
                       "is_submitter": false,
                       "downs": 0,
                       "author_flair_richtext": [
-                        { "e": "text", "t": "MichiGaype" }
+                        {
+                          "e": "text",
+                          "t": "MichiGaype"
+                        }
                       ],
                       "author_patreon_flair": false,
                       "body_html": "&lt;div class=\"md\"&gt;&lt;p&gt;Damn no link?&lt;/p&gt;\n&lt;/div&gt;",
@@ -2157,7 +2165,7 @@
             "mod_note": null,
             "all_awardings": [],
             "collapsed": false,
-            "body": "GM apes.\n\n  \n\n\nHanding out some nifty arcades today. Drop your wallet, a request if you want a particular game and upvote for visibility.\n\n  \n\n\n[beyourownarcade.com](www.beyourownarcade.com)\n\n  \n\n\nCheers\n\n\ud83e\udd8d\u270a",
+            "body": "GM apes.\n\n  \n\n\nHanding out some nfty arcades today. Drop your wallet, a request if you want a particular game and upvote for visibility.\n\n  \n\n\n[beyourownarcade.com](www.beyourownarcade.com)\n\n  \n\n\nCheers\n\n\ud83e\udd8d\u270a",
             "edited": false,
             "top_awarded_type": null,
             "author_flair_css_class": null,
@@ -2171,7 +2179,7 @@
               }
             ],
             "author_patreon_flair": false,
-            "body_html": "&lt;div class=\"md\"&gt;&lt;p&gt;GM apes.&lt;/p&gt;\n\n&lt;p&gt;Handing out some nifty arcades today. Drop your wallet, a request if you want a particular game and upvote for visibility.&lt;/p&gt;\n\n&lt;p&gt;[beyourownarcade.com](&lt;a href=\"http://www.beyourownarcade.com\"&gt;www.beyourownarcade.com&lt;/a&gt;)&lt;/p&gt;\n\n&lt;p&gt;Cheers&lt;/p&gt;\n\n&lt;p&gt;\ud83e\udd8d\u270a&lt;/p&gt;\n&lt;/div&gt;",
+            "body_html": "&lt;div class=\"md\"&gt;&lt;p&gt;GM apes.&lt;/p&gt;\n\n&lt;p&gt;Handing out some nfty arcades today. Drop your wallet, a request if you want a particular game and upvote for visibility.&lt;/p&gt;\n\n&lt;p&gt;[beyourownarcade.com](&lt;a href=\"http://www.beyourownarcade.com\"&gt;www.beyourownarcade.com&lt;/a&gt;)&lt;/p&gt;\n\n&lt;p&gt;Cheers&lt;/p&gt;\n\n&lt;p&gt;\ud83e\udd8d\u270a&lt;/p&gt;\n&lt;/div&gt;",
             "removal_reason": null,
             "collapsed_reason": null,
             "distinguished": null,
