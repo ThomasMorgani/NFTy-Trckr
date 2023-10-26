@@ -61,6 +61,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  padding-inline: .5rem;
 }
 
 .header-section {

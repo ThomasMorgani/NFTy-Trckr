@@ -36,32 +36,26 @@ export default {
       subView: (state) => state.subView,
       view: (state) => state.view,
     }),
-    collectionSelect: {
-      get() {
-        return this.collectionsHeader.collectionSelect
-      },
-      set(v) {
-        this.updateCollectionsHeader({ collectionSelect: v })
-      },
-    },
+    // collectionSelect: {
+    //   get() {
+    //     return this.collectionsHeader.collectionSelect
+    //   },
+    //   set(v) {
+    //     this.updateCollectionsHeader({ collectionSelect: v })
+    //   },
+    // },
 
     radioNav: {
       get() {
         return this.$store.state.subView
       },
       set(v) {
-        console.log(v)
         this.$router.push({ path: `/collections/${v}` })
-        // this.$store.dispatch('setView', v)
       },
     },
   },
   methods: {
     async apikeyTest() {
-      console.log(window.wallet)
-      console.log(window.wallet)
-      // window.wallet.getApiKey()
-      // loopring.getApiKey(this.connectedAccount)
       await loopring.getApiKey(this.connectedWallet, this.connectedAccount)
     },
     cacheTime(time_utc) {
@@ -119,7 +113,6 @@ export default {
       if (this.showFilters) this.showExtended = true
     },
     async onNftRadio(e) {
-      console.log(e)
       if (this.subView === 'collection') {
         //if already in collection view and has a collection loaded
         //clear selected collection and display cached NFTs
@@ -151,7 +144,6 @@ export default {
       try {
         const res = await this.syncCollectionWalletItems(selectedCollection)
         // this.$store.dispatch()
-        console.log(res)
       } catch (e) {
         console.log(e.message)
         //Temp error feedback error fix
@@ -169,100 +161,80 @@ export default {
       this.updateCollectionsHeader({ filters: { show: !this.filters.show } })
     },
   },
-  created() {
-    console.log(this.$route)
-    // const view = this?.$route?.params?.view
-    // console.log(view)
-    // if (!view) return
-    // if (view === 'all' || view === 'collection') this.view = view
-    // else {
-    //   const foundCollection = this.collections.find((c) => c.id === view)
-    //   console.log(this.collections)
-    //   console.log(this.foundCollection)
-    //   console.log(view)
-    //   if (foundCollection) {
-    //     this.$store.dispatch('setCollectionSelectedData', foundCollection)
-    //   }
-    // }
-  },
 }
 </script>
 <template>
-  <section class="page-header">
-    <article
-      class="main-section flex-column nes-container is-rounded with-title full-width"
+  <article class="main-section flex-column full-width">
+    <!-- TOGGLE EXPAND VIEW BTN -->
+
+    <extend-button
+      :isExtended="showExtended"
+      @click="showExtended = !showExtended"
+      class="extend-button"
+    ></extend-button>
+    <div
+      class="top-section flex-column space-between full-width"
+      :class="{ show: showExtended }"
     >
-      <!-- TOGGLE EXPAND VIEW BTN -->
-
-      <extend-button
-        :isExtended="showExtended"
-        @click="showExtended = !showExtended"
-        class="extend-button"
-      ></extend-button>
+      <filters v-if="showFilters"></filters>
       <div
-        class="top-section flex-column space-between full-width"
-        :class="{ show: showExtended }"
+        v-else
+        class="view-container nes-container with-title is-rounded d-flex"
       >
-        <!-- TODO: MOVE TO FILTER -->
-        <filters v-if="showFilters"></filters>
-        <div
-          v-else
-          class="view-container nes-container with-title is-rounded d-flex"
+        <p class="title">View</p>
+
+        <label
+          class="nes-text mr"
+          :class="`is-${radioNav === 'all' ? 'primary' : ''}`"
         >
-          <p class="title">View</p>
-
-          <label
-            class="nes-text mr"
-            :class="`is-${radioNav === 'all' ? 'primary' : ''}`"
+          <input
+            v-model="radioNav"
+            name="radio-collection"
+            type="radio"
+            value="all"
+            class="nes-radio"
+            @click="onCollectionRadio"
+          />
+          <span>Collections</span>
+        </label>
+        <label
+          class="nes-text"
+          :class="`is-${radioNav === 'collection' ? 'primary' : ''}`"
+        >
+          <input
+            v-model="radioNav"
+            value="collection"
+            type="radio"
+            class="nes-radio"
+            name="radio-collection"
+            @click="onNftRadio"
+          />
+          <span>NFTs</span>
+        </label>
+      </div>
+    </div>
+    <div class="flex-row">
+      <collection-image
+        :collection="collectionSelectedData"
+        :styleOverride="collectionImageStyle()"
+      />
+      <h3 class="title-text nes-text is-primary flex-row">
+        <div v-if="!subView">
+          Select a
+          <span
+            @click="showExtended = true"
+            :class="{ 'view-text': !showExtended }"
           >
-            <input
-              v-model="radioNav"
-              name="radio-collection"
-              type="radio"
-              value="all"
-              class="nes-radio"
-              @click="onCollectionRadio"
-            />
-            <span>Collections</span>
-          </label>
-          <label
-            class="nes-text"
-            :class="`is-${radioNav === 'collection' ? 'primary' : ''}`"
-          >
-            <input
-              v-model="radioNav"
-              value="collection"
-              type="radio"
-              class="nes-radio"
-              name="radio-collection"
-              @click="onNftRadio"
-            />
-            <span>NFTs</span>
-          </label>
+            view</span
+          >.
         </div>
-      </div>
-      <div class="flex-row">
-        <collection-image
-          :collection="collectionSelectedData"
-          :styleOverride="collectionImageStyle()"
-        />
-        <h3 class="title-text nes-text is-primary flex-row">
-          <div v-if="!subView">
-            Select a
-            <span
-              @click="showExtended = true"
-              :class="{ 'view-text': !showExtended }"
-            >
-              view</span
-            >.
-          </div>
-          <div v-else>{{ messageText() }}</div>
-        </h3>
-      </div>
-      <div class="bottom-section flex-row full-width">
-        <ListStats />
+        <div v-else>{{ messageText() }}</div>
+      </h3>
+    </div>
+    <div class="bottom-section flex-row full-width">
+      <ListStats />
 
-        <!-- <label
+      <!-- <label
           class="nes-text ml-auto"
           :class="`is-${
             hasFilters ? 'success' : radioNav === 'filters' ? 'primary' : ''
@@ -280,15 +252,15 @@ export default {
           <span>Filters</span>
         </label> -->
 
-        <header-buttons
-          :showFilters="showFilters"
-          @addBtn="onAddButton"
-          @filterBtn="onFilterButton"
-          @refreshBtn="refreshCollectionSelectedData"
-        />
-      </div>
+      <header-buttons
+        :showFilters="showFilters"
+        @addBtn="onAddButton"
+        @filterBtn="onFilterButton"
+        @refreshBtn="refreshCollectionSelectedData"
+      />
+    </div>
 
-      <!-- <div
+    <!-- <div
         v-if="view === 'collection'"
         class="collection-select flex-row full-width"
       >
@@ -298,23 +270,9 @@ export default {
           </div>
         </div>
       </div> -->
-    </article>
-  </section>
+  </article>
 </template>
 <style lang="css" scoped>
-.page-header {
-  position: sticky;
-  top: var(--header-height);
-  /* padding-bottom: 1rem;
-  padding-top: 0px; */
-  /* padding-top: var(--spacing-small); */
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: var(--background-color);
-  /* overflow: hidden; */
-}
 .extend-button {
   position: absolute;
   top: 8px;
@@ -322,7 +280,8 @@ export default {
 }
 
 .main-section {
-  padding: 1rem;
+  padding: 0px;
+
   align-items: flex-start;
   justify-content: space-between;
 }

@@ -4,17 +4,33 @@ export default {
   data: () => ({
     componentsMap: {
       collections: 'collections',
+      market: 'market',
     },
   }),
   components: {
     collections: () => import('@/components/header-collections.vue'),
+    market: () => import('@/components/header-market.vue'),
   },
 }
 </script>
 <template>
-  <!-- TODO: WE CAN USE ONE COMPONENT FOR ALL VIEWS, MAKE COMP -->
-  <!-- <component :is="componentsMap[$route.name]"></component> -->
-  <component :is="componentsMap[$store.state.view]"></component>
+    <section v-if="componentsMap[$store.state.view]" class="page-header nes-container is-rounded with-title">
+      <component :is="componentsMap[$store.state.view]"></component>
+    </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.page-header {
+  position: sticky;
+  top: var(--header-height);
+  /* padding-bottom: 1rem;
+  padding-top: 0px; */
+  /* padding-top: var(--spacing-small); */
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  /* overflow: hidden; */
+}
+</style>

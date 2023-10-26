@@ -16,20 +16,15 @@ export default {
   computed: {},
   methods: {
     async addNftToCollection({ collection = {}, nft = {} }) {
-      console.log('addNftToCollection')
       if (collection?.isWallet) return
       await this.setCollectionSelected(collection)
       this.$store.dispatch('setModalData', nft)
       this.$store.dispatch('toggleModal', 'nft-add')
     },
     async onOpenCollection(collection) {
-      console.log('onOpenCollection')
-      console.log(collection)
-      // this.$router.push({ path: `/collections/collection/${collection.id}` })
       this.$store.dispatch('setContentLoading', true)
       await this.setCollectionSelected(collection)
       this.$store.dispatch('setSubView', 'collection')
-      console.log('onOpenCollection ---- end')
     },
   },
   created() {},

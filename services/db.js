@@ -19,8 +19,6 @@ let openRequest = null
 
 export default {
   add(store, item, key = 'id') {
-    console.log('add')
-    console.log(store, item)
     const newItem = this.setMeta({ ...item })
     if (!newItem[key]) {
       newItem[key] = utils.generateId()
@@ -92,20 +90,13 @@ export default {
           message: 'onsuccess',
           data: db || null,
         }
-        console.log(e)
-        console.log('openRequest on success')
-        console.log(objStoresModified)
         if (objStoresModified?.length > 1) {
           //IF UPGRADED
           for (let storeName of objStoresModified) {
             const store = SEED_DATA.find((s) => s.name === storeName)
             if (store.data) {
-              console.log(store)
               for (let item of store.data) {
-                console.log(item)
                 try {
-                  console.log('adding item to store')
-
                   await this.add(store.name, item)
                 } catch (e) {
                   console.log('error adding item')
@@ -118,41 +109,23 @@ export default {
       }
 
       openRequest.onupgradeneeded = async (e) => {
-        console.log('onupgradeneeeded')
         const db = e.target.result
         for (let store of SEED_DATA) {
           // openRequest = indexedDB.open(DB_NAME, DB_VERSION)
           // openRequest.onsuccess = (e) => {
           //   db = e.target.result
-          console.log('CREATE STORE?: ', store.name)
-          console.log(db)
           if (!db.objectStoreNames.contains(store.name)) {
             const currStore = db.createObjectStore(store.name, {
               keyPath: store.key,
             })
             objStoresModified.push(store.name)
-            console.log(currStore)
-            // if (store.data) {
-            //   for (let item of store.data) {
-            //     try {
-            //       console.log('adding item to store')
-            //       await this.add(store.name, item)
-            //     } catch (e) {
-            //       console.log('error adding item')
-            //     }
-            //   }
-            // }
           }
         }
         console.log('end of onupgrade reached..')
-        // response[0] = { message: 'onupgradeneeded', data: db }
-        // console.log('resolve response', response)
-        // resolve(response)
       }
     })
   },
   delete(store, item) {
-    console.log(store, item)
     const id = item?.id || item
     return new Promise((resolve, reject) => {
       openRequest = indexedDB.open(DB_NAME, DB_VERSION)
@@ -215,11 +188,9 @@ export default {
         const currStore = transaction.objectStore(store)
         currStore.put(putData).onsuccess = (e) => {
           const result = e.target.result
-          console.log('Store updated', result)
           resolve(result)
         }
       }
-
       openRequest.onerror = () => {
         console.log('Error', request.error)
       }
@@ -259,21 +230,6 @@ export default {
     localStorage.setItem(key, JSON.stringify(updated))
     return true
   },
-  // saveCollectionItems(id, items) {
-  //   const collectionItemsData = {
-  //     cached_utc: new Date().getTime(),
-  //     count: items.length || 0,
-  //     id,
-  //   }
-  //   const key = 'C-' + id
-  //   console.log(id)
-  //   console.log(items)
-  //   console.log(collectionItemsData)
-  //   console.log(key)
-  //   this.write(key, JSON.stringify(collectionItemsData))
-  //   return collectionItemsData
-  // },
-
   writeLocalStorage(key, value = null) {
     if (!key || !value) return false
     if (Array.isArray(value) || Object.is(value)) {

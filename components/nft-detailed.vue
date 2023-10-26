@@ -111,7 +111,6 @@ export default {
   },
   methods: {
     async getHolders() {
-      console.log('getHolders')
       if (this.detailView !== 'holders') {
         return
       }
@@ -121,7 +120,6 @@ export default {
       }
 
       if (this.nftHolders !== null) {
-        console.log('nft holders is not null, not fetching')
         console.log('todo: setup lazy auto load more')
         return
       }
@@ -144,9 +142,6 @@ export default {
       //margin/paddding, title, radio row, image container,
       const contentOffset =
         80 + 50 + 50 + this.$refs?.imageContainer?.offsetHeight || 0
-      console.log(modalHeight)
-      console.log(this.$refs?.imageContainer?.offsetHeight)
-      console.log(contentOffset)
       const height = modalHeight - contentOffset
       this.$refs.detailSection.style.height = height + 'px'
       return height
@@ -159,7 +154,7 @@ export default {
       } else {
         this.mediaType = 'image'
       }
-      console.log(this.displayedImage)
+      // console.log(this.displayedImage)
       this.imgLoaded = true
       return
 

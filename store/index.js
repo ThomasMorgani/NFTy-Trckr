@@ -1,8 +1,4 @@
-import loopring from '@/services/loopring.js'
 import db from '@/services/db.js'
-
-const constants = {}
-
 export const state = () => ({
   apiKeys: {
     loopring: {},
@@ -16,26 +12,6 @@ export const state = () => ({
   collectionSelectedData: {},
   collectionSelectedItems: [],
   collectionItemsData: [],
-  //REFACTORING COLLECTIONS HEADER OUT..
-  // collectionsHeader: {
-  //   component: 'HeaderCollections',
-  //   filters: {
-  //     isDeployed: null,
-  //     ownsNft: null,
-  //     search: null,
-  //   },
-  //   collectionSelect: 'select',
-  //   collectionSelectOptions: [
-  //     {
-  //       disabled: false,
-  //       hidden: true,
-  //       text: 'select a collection..',
-  //       value: 'select',
-  //     },
-  //   ],
-
-  //   view: '',
-  // },
   comments: null,
   connectedAccount: null,
   connectedBalances: null,
@@ -70,36 +46,9 @@ export const state = () => ({
   walletError: null,
 })
 
-export const getters = {
-  // allCollections(state) {
-  //   return [...state.defaultCollections, ...state.collections]
-  // },
-  // collectionSelectedData(state, getters) {
-  //   const collection =
-  //     {
-  //       ...getters.allCollections.filter(
-  //         (c) => c.id === state.collectionsHeader.collectionSelect
-  //       )[0],
-  //     } || {}
-  //   if (collection?.id) {
-  //     collection.items = db.get(collection.id) || []
-  //   }
-  //   return collection
-  // },
-  // nftyArcadesById(state) {
-  //   return (
-  //     state?.nftyArcades?.reduce((acc, curr) => {
-  //       return { ...acc, [curr.nftId]: curr }
-  //     }, {}) || {}
-  //   )
-  // },
-}
-
 export const actions = {
   async appInitialize({ commit }) {
-    console.log('action: appInitialize')
     const [result, error] = await db.dbinit()
-    console.log(result, error)
     if (error) {
       console.log('error initializing db...handle')
       console.log(error)
@@ -109,28 +58,6 @@ export const actions = {
     commit('COMMIT_IS_LOADING', false)
     return result
   },
-  // saveCollectionData({ dispatch, state }, collectionData) {
-  //   if (!collectionData?.id) return
-  //   const collectionItems = collectionData.items || []
-
-  //   // db.write(`C-${collectionData.id}`, collectionItems)
-
-  //   const newCollectionData = {
-  //     id: collectionData.id,
-  //     cached_utc: new Date().getTime(),
-  //     count: collectionItems.length || 0,
-  //   }
-
-  //   const collections = [
-  //     ...state.collections.filter((c) => c.id !== collectionData.id),
-  //     newCollectionData,
-  //   ]
-  //   console.log(collectionItems)
-  //   console.log(newCollectionData)
-  //   console.log(collections)
-  //   dispatch('setCollections', collections)
-  //   // db.write('collections', collections)
-  // },
 
   setApiKeys({ commit }, keys) {
     commit('COMMIT_API_KEYS', keys)
@@ -150,17 +77,6 @@ export const actions = {
   setCollectionSelectedItems({ commit }, items) {
     commit('COMMIT_COLLECTION_SELECTED_ITEMS', items)
   },
-  // setCollectionSelectedDataByCollectionId({ dispatch, getters }, collectionId) {
-  //   const collection =
-  //     { ...getters.allCollections.find((c) => c.id === collectionId) } || {}
-  //   if (!collection.id) {
-  //     console.error('error.. collection not found')
-  //     //todo handle
-  //     return
-  //   }
-  //   collection.items = db.get(collection.id) || []
-  //   dispatch('setCollectionSelectedData', collection)
-  // },
   setCollectionsHeader({ commit }, data) {
     commit('COMMIT_COLLECTIONS_HEADER', data)
   },

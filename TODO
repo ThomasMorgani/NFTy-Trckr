@@ -18,7 +18,7 @@
 //on connect wallet
 //check if collection exist
 //else create
-//get getUserNftBalancesLoopring
+//get getAccountNftBalancesLoopring
 
 
 //password hash localstorage

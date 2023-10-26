@@ -21,7 +21,6 @@ export default {
   },
   methods: {
     async copyToClipboard() {
-      console.log(this.detail?.[this.clipboardKey])
       await utils.copyToClipboard(this.detail?.[this.clipboardKey] || '')
       this.$store.dispatch('setSnackbar', { show: true, text: 'Value copied!' })
     },

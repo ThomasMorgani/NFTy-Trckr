@@ -1,5 +1,6 @@
 <script>
 import { mapState } from 'vuex'
+import loopring from '@/services/loopring.js'
 export default {
   name: 'wallet-menu',
   computed: {
@@ -8,6 +9,16 @@ export default {
       connectedWallet: (state) => state.connectedWallet,
     }),
   },
+  methods: {
+    async onTest() {
+      const tokenInfo = await loopring.getTokenInfo()
+      console.log(tokenInfo)
+      if (!this?.connectedAccount?.accountId) {
+        const balances = await loopring.getAccountTokenBalancesLoopring(this.connectedAccount.accountId)
+        console.log(balances)
+      }
+    }
+  }
 }
 </script>
 
@@ -24,7 +35,7 @@ export default {
         {{ connectedWallet ? '' : 'NOT' }} CONNECTED
       </p>
     </div>
-
+<button @click="onTest">GET BALANCES</button>
     <button
       id="connect-btn"
       type="button"

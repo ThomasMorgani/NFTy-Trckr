@@ -11,7 +11,7 @@ export default {
 </script>
 <template>
   <nav class="nav-wrapper">
-    <NuxtLink to="/" exact>
+    <NuxtLink to="/market" exact>
       <img src="/pipe-top.png" alt="" class="nav-icon" />
     </NuxtLink>
     <NuxtLink

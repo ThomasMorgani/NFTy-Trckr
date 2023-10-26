@@ -22,11 +22,8 @@ export default {
       //take array, searchables, search
       //TODO: create method sort
       //take array, key, direction
-      const { search, sort } = this.filters
-      console.log(search)
-      console.log(sort)
+      const { search, sortSelect } = this.filters
       let items = this.collectionItemsData || []
-      console.log(items)
       if (search) {
         items = [
           ...items.filter((i) => {
@@ -39,10 +36,11 @@ export default {
               nftType,
               tokenId,
             } = i || ''
-            const { name, description } = i?.metadata || ''
+            const { artist, name, description } = i?.metadata || ''
 
             const searchables = {
               accountId,
+              artist,
               nftId,
               tokenAddress,
               uri,
@@ -52,18 +50,20 @@ export default {
               name,
               description,
             }
+            console.log(searchables)
             const searchableString = Object.values(searchables).join('')
             return searchableString.toLowerCase().includes(search.toLowerCase())
           }),
         ]
+      }
+      if (sortSelect?.fn) {
+        items = sortSelect.fn([...items])
       }
       return items
     },
   },
   methods: {
     async addNftToCache(nft) {
-      console.log('add to cache')
-      console.log(nft)
       try {
         if (!nft?.id) {
           throw Error('did not receive NFT with valid id')
@@ -71,12 +71,14 @@ export default {
         const nftId = nft.id
         const existingNFT = await db.get('nfts', nftId)
         if (!existingNFT) {
-          db.add('nfts', nft, 'nftId')
+          const nftWithMeta = db.setMeta(nft)
+          await db.add('nfts', nftWithMeta, 'nftId')
+          return nftWithMeta
         }
-        await db.put('collection-items', {
-          id: collectionId,
-          items: collectionItems,
-        })
+        // await db.put('collection-items', {
+        //   id: collectionId,
+        //   items: collectionItems,
+        // })
       } catch (e) {
         console.log('error adding nft to local cache')
         console.log(e.message)
@@ -85,7 +87,6 @@ export default {
       return true
     },
     async addNftToCollection(collectionId, nft) {
-      console.log(nft)
       if (!nft?.id) {
         console.error('did not receive NFT with valid id')
         return false
@@ -145,7 +146,7 @@ export default {
       let balances = []
       try {
         if (network === 'loopring') {
-          balances = await loopring.getUserNftBalancesLoopring(
+          balances = await loopring.getAccountNftBalancesLoopring(
             accountId,
             metadata
           )
@@ -158,12 +159,10 @@ export default {
       }
     },
     async getCacheNftData(nftId) {
-      console.log(nftId)
       if (!nftId) return nftId
       if (Array.isArray(nftId)) {
         const items = []
         for (let item of nftId) {
-          console.log(item)
           const itemData = await db.get('nfts', item)
           if (itemData?.nftId) {
             items.push(itemData)
@@ -198,7 +197,7 @@ export default {
           : animation_url
           ? this.animationUrl(animation_url)
           : image || ''
-
+        // TODO: WIP
         console.log('=====================')
         console.log(nft.metadata)
         console.log(mediaData.mediaSrc)
@@ -230,12 +229,8 @@ export default {
     async getNftHolders(nftData, withAccountInfo = false) {
       // FUTURE: incorporate other chains
       const holders = await loopring.getNftHolders(nftData)
-      console.log(holders)
       if (withAccountInfo && holders.nftHolders) {
         for (let key in holders.nftHolders) {
-          console.log(key)
-          console.log(holders.nftHolders[key])
-
           const accountInfo = await loopring.getAccountInfo(
             holders.nftHolders[key].accountId
           )
@@ -301,8 +296,6 @@ export default {
         ...metadataBase,
         ...metadataExtra,
       }
-      // console.log(nftNormalized)
-
       metadataKeys.forEach((k) => (nftNormalized.metadata[k] = this[k](nft)))
       if (nft?.metadata?.imageSize)
         nftNormalized.metadata.imageSize = nft.metadata.imageSize
@@ -357,7 +350,6 @@ export default {
       })
     },
     async syncCollectionWalletItems(collection) {
-      console.log(collection)
       // return
       let balances = []
       try {
@@ -366,10 +358,8 @@ export default {
             ? this.connectedAccount
             : await loopring.getAccountInfo(null, collection.address)
         //get balances of network (only loopring now)
-        console.log(account)
         // return
         balances = await this.getAccountNftBalances(account.accountId)
-        // console.log(balances)
         if (balances.length < 1) return balances
       } catch (e) {
         console.error('error getting wallet account')

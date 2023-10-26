@@ -37,16 +37,11 @@ export default {
     },
   },
   async mounted() {
-    console.log('collection-item-list mounted')
-    console.log(this.collectionSelectedItems)
-    // console.log(this.collectionItemsData)
     if (this?.collectionSelectedItems?.length) {
       const items = []
       for (let item of this.collectionSelectedItems) {
         const itemData = await db.get('nfts', item)
         if (itemData?.nftId) {
-          // itemData.createdHuman = this.epochToHuman(itemData.created_at) || '-'
-          // itemData.updatedHuman = this.epochToHuman(itemData.updated_at) || '-'
           items.push(itemData)
         }
       }

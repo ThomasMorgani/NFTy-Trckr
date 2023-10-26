@@ -112,7 +112,7 @@ export default {
     async getWalletBalance(wallet) {
       console.log('wallet=====')
       console.log(wallet)
-      return await loopring.getUserNftBalancesLoopring(wallet)
+      return await loopring.getAccountNftBalancesLoopring(wallet)
     },
     async parseData(resp) {
       console.log(resp)

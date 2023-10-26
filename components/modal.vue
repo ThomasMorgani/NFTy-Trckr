@@ -46,23 +46,16 @@ export default {
   },
   watch: {
     isOpen() {
-      console.log('modal is open')
       return this.$store.state.modal
     },
   },
   mounted() {
-    console.log('modal mounted')
-    console.log(this.isOpen)
     if (this.isOpen) {
-      // const body = document.querySelector('body')
-      // body.style.setProperty('overflow-y', 'hidden')
       const html = document.querySelector('html')
       html.style.setProperty('overflow-y', 'hidden')
     }
   },
   beforeDestroy() {
-    // const body = document.querySelector('body')
-    // body.style.removeProperty('overflow-y')
     const html = document.querySelector('html')
     html.style.removeProperty('overflow-y')
   },

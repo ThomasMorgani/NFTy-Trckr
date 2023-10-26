@@ -37,7 +37,6 @@ export default {
     },
   },
   mounted() {
-    console.log('hello from default layout')
     this.$store.dispatch('appInitialize')
     window.addEventListener('scroll', this.onScroll)
     // const routeParams = this?.$route?.params
@@ -98,7 +97,7 @@ html {
   /* content scroll inevitable,
       always show scrollbar to prevent shift
 */
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 html,

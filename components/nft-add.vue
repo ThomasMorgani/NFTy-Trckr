@@ -126,7 +126,23 @@ export default {
       console.log('onSubmit')
       if (this.modalConfirmAdd && this.nft.nftId) {
         console.log('submit addition')
-        this.addNftToCollection(this.collectionSelectedData.id, this.nft)
+        if (this.collectionSelectedData.id === 'cached') {
+          const cachedNft = await this.addNftToCache(this.nft)
+          this.$store.dispatch('setCollectionSelectedData', {
+            ...this.collectionSelectedData,
+            updated_at: new Date().getTime(),
+          })
+          this.$store.dispatch('setCollectionSelectedItems', [
+            ...this.collectionSelectedItems,
+            cachedNft.nftId,
+          ])
+          this.$store.dispatch('setCollectionItemsData', [
+            ...this.collectionItemsData,
+            cachedNft,
+          ])
+        } else {
+          this.addNftToCollection(this.collectionSelectedData.id, this.nft)
+        }
         this.$store.dispatch('setSnackbar', {
           show: true,
           text: `Nft added!`,

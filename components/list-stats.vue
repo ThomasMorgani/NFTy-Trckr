@@ -48,9 +48,6 @@ export default {
       return this.$store.state.view || ''
     },
   },
-  created() {
-    console.log(this.$nuxt)
-  },
 }
 </script>
 

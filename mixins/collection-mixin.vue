@@ -52,10 +52,7 @@ export default {
       //TODO: create method sort
       //take array, key, direction
       const { search, sort } = this.filters
-      console.log(search)
-      console.log(sort)
       let items = this.collectionItemsData || []
-      console.log(items)
       if (search) {
         items = [
           ...items.filter((i) => {
@@ -90,10 +87,7 @@ export default {
     },
     collectionsDisplayed() {
       const { search, sortSelect } = this.filters
-      console.log(search)
-      console.log(sortSelect)
       let collections = [...this.collections] || []
-      console.log(collections)
       if (search) {
         collections = [
           ...collections.filter((c) => {
@@ -108,7 +102,7 @@ export default {
       }
 
       if (sortSelect?.fn) {
-        return sortSelect.fn(collections)
+        return sortSelect.fn([...collections])
       }
       return collections
       // return [...collections].sort((a, b) => b.updated_at - a.updated_at)
@@ -116,8 +110,6 @@ export default {
   },
   methods: {
     async collectionUpsert(collection = {}) {
-      console.log('===========')
-      console.log(collection)
       const newCollection = { ...this.defaultCollection, ...collection }
       if (!collection.id) {
         newCollection.id = collection?.isWallet
@@ -133,17 +125,13 @@ export default {
         newCollection.updated_at
       )
       newCollection.isWallet = !!collection.address
-      console.log(newCollection)
 
       try {
         await db.put('collections', newCollection)
-        console.log(newCollection)
-        console.log(this.collections)
         const collections = [
           ...this.collections.filter((c) => c.id !== newCollection.id),
           { ...newCollection },
         ]
-        console.log(collections)
         this.$store.dispatch('setCollections', collections)
       } catch (e) {
         console.log(e)
@@ -175,7 +163,6 @@ export default {
       // db.write([this.collection.id], this.collection)
     },
     collectionEdit(collection) {
-      console.log(collection)
       this.$store.dispatch('setModalData', collection)
       this.$store.dispatch('toggleModal', 'collection-edit')
     },
@@ -186,8 +173,6 @@ export default {
       return
     },
     setCollectionSelected(selected) {
-      console.log(selected)
-      // return
       if (!selected) return false
       return new Promise(async (res, rej) => {
         const collection = selected?.id
@@ -195,15 +180,12 @@ export default {
           : await db.get('collections', selected)
 
         if (!collection) {
-          // if (!selected) {
           console.log('unable to determine valid collection')
           return false
         }
         // if (!collection) return
 
         const items = await db.get('collection-items', collection?.id)
-        console.log(collection)
-        console.log(items)
         this.$store.dispatch('setCollectionSelectedData', collection)
         this.$store.dispatch('setCollectionSelectedItems', items?.items || [])
         this.$store.dispatch('setCollectionItemsData', [])

@@ -113,7 +113,7 @@ export default {
       console.log(e)
     }
   },
-  getUserNftBalancesLoopring: async (accountId) => {
+  getAccountNftBalancesLoopring: async (accountId) => {
     // https://api3.loopring.io/api/v3/account?owner=0x123456
 
     const balancesUrl = LOOPRING_URL + '/user/nft/balances'

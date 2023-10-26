@@ -32,7 +32,6 @@ export default {
       this.collectionEdit(this.collection)
     },
     onExtend() {
-      console.log(this.$refs)
       this.showExtended = !this.showExtended
       if (this.showExtended) {
         const el = this.$refs[`coll${this.collection.id}`]

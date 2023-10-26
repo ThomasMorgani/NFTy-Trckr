@@ -25,9 +25,6 @@ export default {
     NftPreview,
   },
   mixins: [nftMixin],
-  created() {
-    console.log(this.nft)
-  },
 }
 </script>
 

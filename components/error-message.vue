@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     messages() {
-      console.log(this.error?.messages || [this.error.message])
       return this.error?.messages || [this.error.message]
     },
   },

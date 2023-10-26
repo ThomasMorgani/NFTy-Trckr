@@ -27,7 +27,7 @@ export default {
         message: 'Base collections cannot be modified.',
       },
       patternMismatch: {
-        nameInput: 'Name can have alphanumeric characters only.',
+        nameInput: 'Name must be alphanumeric characters only.',
         addressInput: 'Address pattern error.',
       },
       tooLong: {
@@ -62,7 +62,6 @@ export default {
       },
 
       set(v) {
-        console.log(v)
         this.collection.note = v
       },
     },
@@ -127,12 +126,10 @@ export default {
           this.formErrors.push('Error encountered saving colleciton.')
       }
       if (!isValid) {
-        console.log('is not valid, ')
         this.isSubmitting = false
         return
       }
       const isNew = !this.collection.id
-      console.log(isNew)
       this.collectionUpsert(this.collection)
       this.$store.dispatch('setSnackbar', {
         show: true,
@@ -191,7 +188,6 @@ export default {
             )
 
             return rej(false)
-            console.log('return')
           }
 
           //  //Detect duplicate address
@@ -224,12 +220,10 @@ export default {
             res(true)
           }
           try {
-            console.log(this.collection.address)
             const accountInfo = await loopring.getAccountInfo(
               null,
               this.collection.address
             )
-            console.log(accountInfo)
             const wallet = {
               address: accountInfo.owner,
               accountId: accountInfo.accountId,
@@ -247,12 +241,6 @@ export default {
     },
   },
   created() {
-    console.log(this.$store.state)
-    console.log(Object.is(this?.$store?.state?.modalData))
-    console.log({
-      ...this.collection,
-      ...this.$store.state.modalData,
-    })
     this.collection = { ...this.defaultCollection }
     if (this?.$store?.state?.modalData?.id) {
       this.collection = {
@@ -294,7 +282,7 @@ export default {
             id="name"
             ref="nameInput"
             maxlength="80"
-            pattern="[a-zA-Z0-9 -]+"
+            pattern="[a-zA-Z0-9 \-_]+"
             :readonly="isReadonly"
             required
             type="text"
@@ -321,7 +309,7 @@ export default {
               :class="
                 isReadonly || collection.id
                   ? 'is-disabled'
-                  : !addressesFailed.includes(address) &&
+                  : !addressesFailed.includes(collection.address) &&
                     inputIsValid($refs?.addressInput)
                   ? ''
                   : 'is-error'
@@ -347,7 +335,7 @@ export default {
             :class="
               isReadonly || collection.id
                 ? 'is-disabled'
-                : !addressesFailed.includes(address) &&
+                : !addressesFailed.includes(collection.address) &&
                   inputIsValid($refs?.addressInput)
                 ? ''
                 : 'is-error'
