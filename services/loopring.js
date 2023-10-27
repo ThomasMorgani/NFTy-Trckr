@@ -155,6 +155,7 @@ export default {
           accountId,
         },
       })
+      return initialResult.data
     } catch (e) {
       console.log('error in getUserTokenBalances')
     }

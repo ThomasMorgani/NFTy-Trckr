@@ -24,14 +24,20 @@ export default {
       Library
     </NuxtLink>
     |
-    <NuxtLink
+    <span
+      text="Track collection holders"
+      class="nes-text is-disabled mr-s"
+    >
+      Trckr</span
+    >
+    <!-- <NuxtLink
       active-class="is-primary nav-link-active"
       text="Track collection holders"
       to="/tracker"
       class="nes-text nav-link"
     >
       Trckr</NuxtLink
-    >
+    > -->
     <slot></slot>
   </nav>
 </template>

@@ -218,6 +218,11 @@ label {
   align-items: center;
 }
 
+.align-start {
+  align-content: start;
+  align-items: start;
+}
+
 .d-block {
   display: block;
 }
@@ -232,6 +237,10 @@ label {
 
 .content-end {
   justify-content: end;
+}
+
+.content-start {
+  justify-content: start;
 }
 
 .disable-scroll {
@@ -399,6 +408,10 @@ label {
   padding-block: var(--spacing-base);
 }
 
+.py-s {
+  padding-block: var(--spacing-s);
+}
+
 .pointer {
   cursor: var(--cursor-pointer);
 }
@@ -413,6 +426,10 @@ label {
 
 .text-no-wrap {
   white-space: nowrap;
+}
+
+.text-left {
+  text-align: left;
 }
 
 /* COMPONENTS */

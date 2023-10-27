@@ -3,6 +3,10 @@ import { mapState } from 'vuex'
 import loopring from '@/services/loopring.js'
 export default {
   name: 'wallet-menu',
+  data: () => ({
+    holdings: null,
+
+  }), 
   computed: {
     ...mapState({
       connectedAccount: (state) => state.connectedAccount,
@@ -13,10 +17,41 @@ export default {
     async onTest() {
       const tokenInfo = await loopring.getTokenInfo()
       console.log(tokenInfo)
-      if (!this?.connectedAccount?.accountId) {
-        const balances = await loopring.getAccountTokenBalancesLoopring(this.connectedAccount.accountId)
-        console.log(balances)
+    
+    }
+  },
+  watch: {
+    async connectedWallet(v) {
+      if (v && !this.holdings) {
+        //setInterval,  or on mount.. 
+        //TODO: get market price
+        const tokenInfo = await loopring.getTokenInfo()
+        console.log(tokenInfo)
+        if (this?.connectedAccount?.accountId) {
+          const balances = await loopring.getAccountTokenBalancesLoopring(this.connectedAccount.accountId)
+          console.log(balances)
+          if (balances?.length) {
+            const holdings = balances.map(balance => {
+              console.log(balances)
+              const token = tokenInfo.find(t => t.tokenId === balance.tokenId) 
+              if (token) {
+                let total = balance.total / Math.pow(10, token.decimals)
+                // total = total == 0 ? 0 : total < 1 ? `0${total}` : total
+                return {
+                  address: token.address,
+                  name: token.name,
+                  symbol: token.symbol,
+                  total,
+
+                }
+              }
+            })
+            this.holdings = holdings
+          }
+   
+        }
       }
+
     }
   }
 }
@@ -34,13 +69,18 @@ export default {
         WALLET
         {{ connectedWallet ? '' : 'NOT' }} CONNECTED
       </p>
+   
     </div>
-<button @click="onTest">GET BALANCES</button>
+    <div v-if="holdings" class="flex-column flex-wrap align-start justify-content text-left full-width py-s">
+      <h4 class="nes-text is-primary">Holdings</h4>
+        <div v-for="holding in holdings" :key="holding.symbol" class="nes-text">{{ holding.symbol + ' ' + holding.total }}</div>
+    </div>
+<!-- <button @click="onTest">GET BALANCES</button> -->
     <button
       id="connect-btn"
       type="button"
       @click="$emit('connectWallet')"
-      class="nes-btn full-width"
+      class="nes-btn full-width mt-auto"
       :class="connectedWallet ? 'is-error' : 'is-success'"
     >
       {{ connectedWallet ? 'DISCONNECT' : 'CONNECT' }}
@@ -58,6 +98,7 @@ export default {
 <style scoped>
 .card {
   height: auto;
+  min-height: 240px;
 }
 
 .status-icon {

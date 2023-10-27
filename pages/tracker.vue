@@ -1,6 +1,5 @@
 <script>
 import api from '~/services/loopring.js'
-
 import { mapState } from 'vuex'
 export default {
   name: 'tracker',
@@ -150,12 +149,11 @@ export default {
 </script>
 
 <template>
-  <section>
     <section class="section">
-      <form action="#" @submit.prevent="fetchApi(permalink)" class="full-width">
+      <!-- <form action="#" @submit.prevent="fetchApi(permalink)" class="full-width">
         <div class="nes-field">
           <label for="endpoint">Root permalink</label>
-
+  
           <div class="flex-row">
             <input
               v-model="permalink"
@@ -167,7 +165,7 @@ export default {
           </div>
         </div>
       </form>
-
+  
       <button type="button" @click="testApi()" class="nes-btn is-error mx">
         test
       </button>
@@ -189,10 +187,10 @@ export default {
         </p>
       </article>
     </section>
-
+  
     <section class="section">
       <p v-if="comments === []">No comments</p>
-
+  
       <div v-else class="comments-section">
         <comment-card
           v-for="(comment, idx) in commentsDisplayed"
@@ -201,9 +199,8 @@ export default {
           :nftyArcadesById="nftyArcadesById"
         ></comment-card>
       </div>
-
-      <p></p>
-    </section>
+  
+      <p></p>-->
   </section>
 </template>
 

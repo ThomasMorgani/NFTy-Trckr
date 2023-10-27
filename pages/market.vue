@@ -68,10 +68,10 @@ export default {
       })
       this.prices = [...tokenPrices]
       this.isLoading = false
+      this.onResize()
     }
   },
   mounted() {
-    this.onResize()
     window.addEventListener('resize', this.onResize)
   },
   beforeDestroy: function () {
@@ -87,7 +87,7 @@ export default {
   >
     <loader v-if="isLoading" class="loader" />
     <table v-else class="nes-table is-bordered is-dark">
-      <thead :style="{ top: tableTop }">
+      <thead :key="tableTop" :style="{ top: tableTop }">
         <tr class="nes-text is-primary">
           <th>SYMBOL</th>
           <th>NAME</th>
@@ -115,7 +115,7 @@ thead {
   background-color: inherit;
   position: sticky;
   /* top: 280px; */
-  z-index: 100;
+  z-index: 4;
 }
 th:nth-child(1),
 td:nth-child(1) {
