@@ -20,7 +20,7 @@
     "nes.css": "^2.3.0",
     "number-to-bn": "^1.7.0",
     "nuxt": "^2.16.3",
-    "three": "^0.150.0",
+    "three": "^0.159.0",
     "vue": "2.7",
     "vue-server-renderer": "2.7",
     "vue-template-babel-compiler": "^1.2.0",
