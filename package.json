@@ -25,7 +25,7 @@
     "vue-server-renderer": "2.7",
     "vue-template-babel-compiler": "^1.2.0",
     "vue-template-compiler": "2.7",
-    "web3": "^1.7.4",
+    "web3": "^4.4.0",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
